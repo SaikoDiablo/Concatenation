@@ -28,12 +28,14 @@ public class Main{
     boolean alternate= s1.length() == s2.length();//checking if both hava same length
     System.out.println("Does alternation possible? " + alternate);
 
-    StringBuilder alter = new StringBuilder();//creating empty StringBuilder tp build a new string in a loop
-    for(int i=0; i<s1.length() && i<s2.length(); i++){ //find the lenght of shorter string
-        alter.append(s1.charAt(i)).append(s2.charAt(i));// add s1 i character, the s2
-    }
-    System.out.println("Alternating: "+alter); // prints the final alternating
+    String alter = "";//creating empty string to do the result
+    int minLen = Math.min(s1.length(), s2.length());
 
+        for(int i=0; i<minLen; i++){//append charecters s1 and s2
+            alter = alter + s1.charAt(i) + s2.charAt(i);
+        }
+
+    System.out.println("Alternating: " + alter);//print the alternation
     obj.close();
 
     }
